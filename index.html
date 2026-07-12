@@ -17,90 +17,246 @@
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=800557740590259&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      background: #FDF6F0;
-      color: #3A1528;
-      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
-      line-height: 1.8;
+    :root {
+      --clay:    #F2E6D9;
+      --clay-dk: #E8D5C2;
+      --rose:    #B85575;
+      --rose-lt: #D4849E;
+      --rose-dk: #8B3558;
+      --ink:     #3A1A28;
+      --ink-sub: #7A4A60;
+      --gold:    #C9975A;
+      --surface: #FBF4EE;
+      --border:  #DEC4B4;
+      --hand:    "Klee One", "Hiragino Mincho ProN", serif;
+      --gothic:  "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
     }
 
-    .page { max-width: 480px; margin: 0 auto; padding: 0 0 60px; }
+    /* ── Grain overlay ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.035;
+      mix-blend-mode: multiply;
+    }
 
-    /* Hero */
+    body {
+      background: var(--clay);
+      color: var(--ink);
+      font-family: var(--gothic);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* Warm blobs in background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 15% 20%, rgba(201,151,90,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 85% 70%, rgba(184,85,117,0.09) 0%, transparent 70%),
+        radial-gradient(ellipse 70% 50% at 50% 100%, rgba(200,160,140,0.10) 0%, transparent 70%);
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 0 72px;
+    }
+
+    /* ── Hero ── */
     .hero {
-      background: #B85575;
-      padding: 36px 24px 32px;
+      background: var(--rose);
+      padding: 40px 28px 36px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Wavy top edge of hero */
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: -1px; right: -1px;
+      height: 24px;
+      background: var(--clay);
+      clip-path: ellipse(55% 100% at 50% 100%);
     }
 
     .hero-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 14px;
+      font-family: var(--gothic);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 16px;
       display: block;
     }
 
     .hero-title {
-      font-size: clamp(1.4rem, 5.5vw, 1.8rem);
-      font-weight: 800;
+      font-family: var(--hand);
+      font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+      font-weight: 600;
       color: #fff;
-      line-height: 1.5;
-      margin-bottom: 12px;
+      line-height: 1.65;
+      margin-bottom: 10px;
     }
 
     .hero-title em {
       font-style: normal;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Hand-drawn circle around emphasis */
+    .hero-title .circled {
+      position: relative;
       color: #FFD580;
     }
 
     .hero-sub {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.9);
+      font-family: var(--gothic);
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.88);
+      margin-top: 12px;
     }
 
-    /* Benefits */
+    /* ── Handwritten divider ── */
+    .divider-hand {
+      text-align: center;
+      padding: 20px 0 4px;
+    }
+
+    .divider-hand svg {
+      width: 120px;
+      height: 12px;
+      overflow: visible;
+    }
+
+    /* ── Benefits ── */
     .benefits {
-      padding: 28px 24px 0;
+      padding: 12px 22px 0;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-    }
-
-    .benefit {
-      background: #fff;
-      border: 1px solid #E8C8D5;
-      border-radius: 8px;
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
       gap: 14px;
     }
 
-    .benefit-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .benefit {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 14px 4px 14px 4px; /* organic asymmetry */
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      position: relative;
+    }
+
+    /* alternating corner asymmetry */
+    .benefit:nth-child(2) {
+      border-radius: 4px 14px 4px 14px;
+    }
+
+    .benefit-icon {
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+      filter: drop-shadow(0 1px 2px rgba(184,85,117,0.2));
+    }
 
     .benefit-body { flex: 1; }
 
     .benefit-main {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: #3A1528;
-      line-height: 1.4;
+      font-family: var(--hand);
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    .benefit-main strong {
+      color: var(--rose);
+      font-weight: 600;
     }
 
     .benefit-sub {
-      font-size: 0.78rem;
-      color: #7A4A60;
-      margin-top: 2px;
+      font-family: var(--gothic);
+      font-size: 0.76rem;
+      color: var(--ink-sub);
+      margin-top: 4px;
+      line-height: 1.6;
     }
 
-    /* CTA */
+    /* Hand-drawn underline accent */
+    .benefit-main::after {
+      content: '';
+      display: block;
+      margin-top: 6px;
+      height: 2px;
+      width: 40%;
+      background: linear-gradient(90deg, var(--rose-lt), transparent);
+      border-radius: 2px;
+      opacity: 0.5;
+    }
+
+    /* ── CTA ── */
     .cta-wrap {
-      margin: 28px 24px 0;
+      margin: 28px 22px 0;
+    }
+
+    /* Paper-like card for CTA */
+    .cta-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 4px 16px 4px 16px;
+      padding: 22px 20px 20px;
       text-align: center;
+    }
+
+    .cta-card-title {
+      font-family: var(--hand);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--rose-dk);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+
+    .cta-reassure {
+      font-family: var(--gothic);
+      font-size: 0.79rem;
+      color: var(--ink-sub);
+      line-height: 2;
+      margin-bottom: 16px;
+      background: var(--clay);
+      border-radius: 6px;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    .cta-reassure span {
+      display: block;
+    }
+
+    .cta-reassure span::before {
+      content: '✓ ';
+      color: var(--rose);
+      font-weight: 700;
     }
 
     .cta-btn {
@@ -108,27 +264,54 @@
       width: 100%;
       background: #06C755;
       color: #fff;
-      font-size: 1.05rem;
-      font-weight: 800;
-      padding: 20px 24px;
-      border-radius: 10px;
+      font-family: var(--gothic);
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 18px 20px;
+      border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 4px 18px rgba(6,199,85,0.35);
+      box-shadow: 0 4px 16px rgba(6,199,85,0.3), 0 1px 0 rgba(255,255,255,0.2) inset;
       line-height: 1.4;
+      letter-spacing: 0.02em;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    .cta-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 8px rgba(6,199,85,0.25);
     }
 
     .cta-btn span {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 400;
       opacity: 0.85;
       margin-top: 4px;
     }
 
-    .cta-note {
-      font-size: 0.72rem;
-      color: #7A4A60;
-      margin-top: 10px;
+    /* ── Footer ── */
+    .foot {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .foot-brand {
+      font-family: var(--hand);
+      font-size: 0.9rem;
+      color: var(--rose);
+      font-weight: 600;
+    }
+
+    .foot-sub {
+      font-family: var(--gothic);
+      font-size: 0.7rem;
+      color: var(--ink-sub);
+      margin-top: 2px;
+    }
+
+    @media (max-width: 360px) {
+      .benefits, .cta-wrap { margin-left: 14px; margin-right: 14px; }
+      .hero { padding: 32px 18px 30px; }
     }
   </style>
 </head>
@@ -139,47 +322,72 @@
     <span class="hero-label">mariage.isis ｜ IBJ正式加盟店</span>
     <h1 class="hero-title">
       婚活アプリで１年活動し<br>
-      反応ゼロだった<em>４１歳女性</em>が<br>
-      ２ヶ月で<em>11人</em>からお見合いの<br>
-      お申し込まれた理由とは？
+      反応ゼロだった<span class="circled">４１歳女性</span>が<br>
+      ２ヶ月で<span class="circled">11人</span>から<br>
+      お見合いのお申込みを受けた<br>
+      理由とは？
     </h1>
     <p class="hero-sub">3つのポイントを無料PDFで公開します</p>
+  </div>
+
+  <div class="divider-hand">
+    <svg viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 8 Q20 3 40 7 Q60 11 80 6 Q100 2 116 7"
+            stroke="#C4849E" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    </svg>
   </div>
 
   <div class="benefits">
     <div class="benefit">
       <div class="benefit-icon">📝</div>
       <div class="benefit-body">
-        <div class="benefit-main">プロに丸投げ！<br>お申し込みが<strong style="color:#B85575">3倍</strong>になる<br>異性目線のPR３つのコツ</div>
-        <div class="benefit-sub">異性目線の極意を教えます</div>
+        <div class="benefit-main">「会いたい」と思われるプロフィールには<br>じつは<strong>小さな法則</strong>があります</div>
+        <div class="benefit-sub">申し込みが平均3倍になった言葉の選び方を、このPDFで公開します</div>
       </div>
     </div>
     <div class="benefit">
       <div class="benefit-icon">✨</div>
       <div class="benefit-body">
-        <div class="benefit-main">誰でも<strong style="color:#B85575">-5歳</strong>になれる<br>ヘアメイク術！<br>写真の印象を１８０度変える<br>美容室経営者のアドバイス</div>
-        <div class="benefit-sub">お見合いの７〜８割は写真できまります</div>
+        <div class="benefit-main">誰でも<strong>-5歳</strong>になれる<br>お申し込みが殺到してしまう<br>異性を引き寄せる<br><strong>プロフ写真の秘密</strong></div>
+        <div class="benefit-sub">美容師20年のプロが見た「選ばれる写真」の条件を解説します</div>
       </div>
     </div>
     <div class="benefit">
       <div class="benefit-icon">🔮</div>
       <div class="benefit-body">
-        <div class="benefit-main">自分の運命や気質や相性を<br><strong style="color:#B85575">四柱推命で無料鑑定</strong></div>
-        <div class="benefit-sub">あなたのエネルギー診断を言語化します</div>
+        <div class="benefit-main">婚活がうまくいかない原因の多くは<br>自分では気づけない<br><strong>「相手への印象の癖」</strong>です</div>
+        <div class="benefit-sub">四柱推命で見えてきた「短期間で結果が出る人」と「長引く人」の違い</div>
       </div>
     </div>
   </div>
 
+  <div class="divider-hand" style="padding:20px 0 4px;">
+    <svg viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 6 Q30 10 60 5 Q90 1 116 7"
+            stroke="#C4849E" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-dasharray="4 3"/>
+    </svg>
+  </div>
+
   <div class="cta-wrap">
-    <p style="font-size:0.82rem; color:#7A4A60; margin-bottom:14px; line-height:1.9;">
-      登録後すぐにPDFが届きます。<br>
-      営業・勧誘は一切しません。読むだけでOK。<br>
-      いつでもブロックできます。
-    </p>
-    <a href="https://lin.ee/qYCi0W9" class="cta-btn">
-      LINEに登録して無料PDFを受け取る
-      <span>友だち追加は無料</span>
-    </a>
+    <div class="cta-card">
+      <div class="cta-card-title">
+        LINEに登録するだけで<br>このPDFが今すぐ届きます
+      </div>
+      <div class="cta-reassure">
+        <span>登録後すぐにPDFが届きます</span>
+        <span>営業・勧誘は一切しません</span>
+        <span>読むだけでOK。いつでもブロックできます</span>
+      </div>
+      <a href="https://lin.ee/qYCi0W9" class="cta-btn">
+        LINEに登録して無料PDFを受け取る
+        <span>友だち追加は無料</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="foot-brand">mariage.isis</div>
+    <div class="foot-sub">IBJ正式加盟店 ／ @mariage.isis</div>
   </div>
 
 </div>
