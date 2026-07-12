@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>無料PDF｜41歳でも11人からお見合いを申し込まれた3つのポイント</title>
+  <title>LINE登録で3つ無料プレゼント｜mariage.isis</title>
   <!-- Meta Pixel -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,7 +16,6 @@
   </script>
   <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=800557740590259&ev=PageView&noscript=1"/></noscript>
-  <!-- End Meta Pixel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
@@ -38,7 +37,6 @@
       --gothic:  "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif;
     }
 
-    /* ── Grain overlay ── */
     body::after {
       content: '';
       position: fixed;
@@ -59,7 +57,6 @@
       min-height: 100vh;
     }
 
-    /* Warm blobs in background */
     body::before {
       content: '';
       position: fixed;
@@ -68,8 +65,7 @@
       z-index: 0;
       background:
         radial-gradient(ellipse 60% 40% at 15% 20%, rgba(201,151,90,0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 60% at 85% 70%, rgba(184,85,117,0.09) 0%, transparent 70%),
-        radial-gradient(ellipse 70% 50% at 50% 100%, rgba(200,160,140,0.10) 0%, transparent 70%);
+        radial-gradient(ellipse 50% 60% at 85% 70%, rgba(184,85,117,0.09) 0%, transparent 70%);
     }
 
     .page {
@@ -83,18 +79,17 @@
     /* ── Hero ── */
     .hero {
       background: var(--rose);
-      padding: 40px 28px 36px;
+      padding: 40px 28px 44px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    /* Wavy top edge of hero */
-    .hero::before {
+    .hero::after {
       content: '';
       position: absolute;
       bottom: -1px; left: -1px; right: -1px;
-      height: 24px;
+      height: 28px;
       background: var(--clay);
       clip-path: ellipse(55% 100% at 50% 100%);
     }
@@ -110,116 +105,154 @@
 
     .hero-title {
       font-family: var(--hand);
-      font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+      font-size: clamp(1.25rem, 5.5vw, 1.65rem);
       font-weight: 600;
       color: #fff;
       line-height: 1.65;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .hero-title em {
       font-style: normal;
-      position: relative;
-      display: inline-block;
-    }
-
-    /* Hand-drawn circle around emphasis */
-    .hero-title .circled {
-      position: relative;
       color: #FFD580;
     }
 
     .hero-sub {
       font-family: var(--gothic);
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       color: rgba(255,255,255,0.88);
-      margin-top: 12px;
     }
 
-    /* ── Handwritten divider ── */
-    .divider-hand {
+    /* ── Gift section header ── */
+    .gift-header {
       text-align: center;
-      padding: 20px 0 4px;
+      padding: 28px 24px 16px;
     }
 
-    .divider-hand svg {
-      width: 120px;
-      height: 12px;
-      overflow: visible;
+    .gift-header-eyebrow {
+      font-family: var(--gothic);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--rose);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 8px;
     }
 
-    /* ── Benefits ── */
-    .benefits {
-      padding: 12px 22px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .benefit {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: 14px 4px 14px 4px; /* organic asymmetry */
-      padding: 16px 18px;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      position: relative;
-    }
-
-    /* alternating corner asymmetry */
-    .benefit:nth-child(2) {
-      border-radius: 4px 14px 4px 14px;
-    }
-
-    .benefit-icon {
-      font-size: 1.6rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-      filter: drop-shadow(0 1px 2px rgba(184,85,117,0.2));
-    }
-
-    .benefit-body { flex: 1; }
-
-    .benefit-main {
+    .gift-header-title {
       font-family: var(--hand);
-      font-size: 0.96rem;
+      font-size: 1.2rem;
       font-weight: 600;
       color: var(--ink);
-      line-height: 1.55;
-    }
-
-    .benefit-main strong {
-      color: var(--rose);
-      font-weight: 600;
-    }
-
-    .benefit-sub {
-      font-family: var(--gothic);
-      font-size: 0.76rem;
-      color: var(--ink-sub);
-      margin-top: 4px;
       line-height: 1.6;
     }
 
-    /* Hand-drawn underline accent */
-    .benefit-main::after {
-      content: '';
-      display: block;
-      margin-top: 6px;
-      height: 2px;
-      width: 40%;
-      background: linear-gradient(90deg, var(--rose-lt), transparent);
-      border-radius: 2px;
-      opacity: 0.5;
+    .gift-header-title em {
+      font-style: normal;
+      color: var(--rose);
+    }
+
+    /* wavy line */
+    .wavy {
+      text-align: center;
+      padding: 6px 0;
+    }
+    .wavy svg { width: 100px; height: 10px; overflow: visible; }
+
+    /* ── Gift cards ── */
+    .gifts {
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .gift-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 14px 4px 14px 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gift-card:nth-child(2) { border-radius: 4px 14px 4px 14px; }
+    .gift-card:nth-child(3) { border-radius: 12px 4px 12px 4px; }
+
+    .gift-card-head {
+      background: var(--rose);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .gift-num {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--hand);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .gift-tag {
+      font-family: var(--gothic);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .gift-free {
+      margin-left: auto;
+      background: #FFD580;
+      color: var(--rose-dk);
+      font-family: var(--gothic);
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+
+    .gift-card-body {
+      padding: 16px 18px;
+    }
+
+    .gift-title {
+      font-family: var(--hand);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+
+    .gift-title strong { color: var(--rose); }
+
+    .gift-desc {
+      font-family: var(--gothic);
+      font-size: 0.78rem;
+      color: var(--ink-sub);
+      line-height: 1.8;
+    }
+
+    .gift-desc em {
+      font-style: normal;
+      font-weight: 700;
+      color: var(--rose-dk);
     }
 
     /* ── CTA ── */
     .cta-wrap {
-      margin: 28px 22px 0;
+      margin: 24px 20px 0;
     }
 
-    /* Paper-like card for CTA */
     .cta-card {
       background: var(--surface);
       border: 1.5px solid var(--border);
@@ -233,13 +266,13 @@
       font-size: 1rem;
       font-weight: 600;
       color: var(--rose-dk);
-      margin-bottom: 12px;
-      line-height: 1.6;
+      margin-bottom: 14px;
+      line-height: 1.65;
     }
 
     .cta-reassure {
       font-family: var(--gothic);
-      font-size: 0.79rem;
+      font-size: 0.78rem;
       color: var(--ink-sub);
       line-height: 2;
       margin-bottom: 16px;
@@ -270,16 +303,13 @@
       padding: 18px 20px;
       border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 4px 16px rgba(6,199,85,0.3), 0 1px 0 rgba(255,255,255,0.2) inset;
+      box-shadow: 0 4px 16px rgba(6,199,85,0.3);
       line-height: 1.4;
       letter-spacing: 0.02em;
-      transition: transform 0.1s, box-shadow 0.1s;
+      transition: transform 0.1s;
     }
 
-    .cta-btn:active {
-      transform: translateY(1px);
-      box-shadow: 0 2px 8px rgba(6,199,85,0.25);
-    }
+    .cta-btn:active { transform: translateY(1px); }
 
     .cta-btn span {
       display: block;
@@ -310,8 +340,8 @@
     }
 
     @media (max-width: 360px) {
-      .benefits, .cta-wrap { margin-left: 14px; margin-right: 14px; }
-      .hero { padding: 32px 18px 30px; }
+      .gifts, .cta-wrap { margin-left: 14px; margin-right: 14px; }
+      .hero { padding: 32px 18px 38px; }
     }
   </style>
 </head>
@@ -322,64 +352,104 @@
     <span class="hero-label">mariage.isis ｜ IBJ正式加盟店</span>
     <h1 class="hero-title">
       婚活アプリで１年活動し<br>
-      反応ゼロだった<span class="circled">４１歳女性</span>が<br>
-      ２ヶ月で<span class="circled">11人</span>から<br>
+      反応ゼロだった<em>４１歳女性</em>が<br>
+      ２ヶ月で<em>11人</em>から<br>
       お見合いのお申込みを受けた<br>
       理由とは？
     </h1>
-    <p class="hero-sub">3つのポイントを無料PDFで公開します</p>
+    <p class="hero-sub">LINEに登録するだけで、3つの特典を無料プレゼント</p>
   </div>
 
-  <div class="divider-hand">
-    <svg viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 8 Q20 3 40 7 Q60 11 80 6 Q100 2 116 7"
-            stroke="#C4849E" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <div class="gift-header">
+    <span class="gift-header-eyebrow">LINE登録で全部もらえます</span>
+    <div class="gift-header-title">
+      あなたの婚活を変える<br><em>3つの無料特典</em>
+    </div>
+  </div>
+
+  <div class="wavy">
+    <svg viewBox="0 0 100 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 6 Q20 2 40 6 Q60 10 80 5 Q90 3 98 6"
+            stroke="#C4849E" stroke-width="1.5" stroke-linecap="round" fill="none"/>
     </svg>
   </div>
 
-  <div class="benefits">
-    <div class="benefit">
-      <div class="benefit-icon">📝</div>
-      <div class="benefit-body">
-        <div class="benefit-main">相手があなたを選ぶ為には<br>異性目線での書き方や<br><strong>自然に選ばれる様になる書き方</strong>があります</div>
-        <div class="benefit-sub">申し込みが平均3倍になった言葉の選び方を、このPDFで公開します</div>
-      </div>
-    </div>
-    <div class="benefit">
-      <div class="benefit-icon">✨</div>
-      <div class="benefit-body">
-        <div class="benefit-main">誰でも<strong>-5歳</strong>になれ<br>お申し込みが殺到してしまう<br><strong>プロフ写真の秘密</strong></div>
-        <div class="benefit-sub">美容師20年のプロが見た「選ばれる写真」の条件を解説します</div>
-      </div>
-    </div>
-    <div class="benefit">
-      <div class="benefit-icon">🔮</div>
-      <div class="benefit-body">
-        <div class="benefit-main">婚活がうまくいかない原因の多くは<br><strong>「生まれ持った気質を<br>知らない事が原因」</strong>です</div>
-        <div class="benefit-sub">四柱推命で見えてきた「短期間で結果が出る人」と「長引く人」の違い</div>
-      </div>
-    </div>
-  </div>
+  <div class="gifts">
 
-  <div class="divider-hand" style="padding:20px 0 4px;">
-    <svg viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 6 Q30 10 60 5 Q90 1 116 7"
-            stroke="#C4849E" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-dasharray="4 3"/>
-    </svg>
+    <!-- 特典1 -->
+    <div class="gift-card">
+      <div class="gift-card-head">
+        <div class="gift-num">1</div>
+        <div class="gift-tag">婚活スタイル診断</div>
+        <div class="gift-free">無料</div>
+      </div>
+      <div class="gift-card-body">
+        <div class="gift-title">
+          あなたは<strong>マッチングアプリ向き</strong>？<br>
+          それとも<strong>結婚相談所向き</strong>？<br>
+          今だけ無料で診断できます
+        </div>
+        <div class="gift-desc">
+          <em>7つの質問</em>に答えるだけで、あなたの婚活スタイルの傾向と
+          「なぜうまくいかないか」の原因がわかります。
+          婚活歴・年齢・外見は一切関係ありません。
+        </div>
+      </div>
+    </div>
+
+    <!-- 特典2 -->
+    <div class="gift-card">
+      <div class="gift-card-head">
+        <div class="gift-num">2</div>
+        <div class="gift-tag">プロフ写真の見せ方</div>
+        <div class="gift-free">無料</div>
+      </div>
+      <div class="gift-card-body">
+        <div class="gift-title">
+          誰でも<strong>-5歳</strong>になれる<br>
+          お申し込みが殺到してしまう<br>
+          <strong>プロフ写真の秘密</strong>
+        </div>
+        <div class="gift-desc">
+          美容師20年のプロが見た「選ばれる写真」と「スルーされる写真」の違い。
+          お見合いの<em>7〜8割は写真</em>で決まります。
+        </div>
+      </div>
+    </div>
+
+    <!-- 特典3 -->
+    <div class="gift-card">
+      <div class="gift-card-head">
+        <div class="gift-num">3</div>
+        <div class="gift-tag">気質診断（四柱推命）</div>
+        <div class="gift-free">無料</div>
+      </div>
+      <div class="gift-card-body">
+        <div class="gift-title">
+          婚活がうまくいかない原因の多くは<br>
+          <strong>「生まれ持った気質を<br>知らない事が原因」</strong>です
+        </div>
+        <div class="gift-desc">
+          四柱推命で見えてきた「短期間で結果が出る人」と「長引く人」の違い。
+          あなたのエネルギー診断を言語化します。
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div class="cta-wrap">
     <div class="cta-card">
       <div class="cta-card-title">
-        LINEに登録するだけで<br>このPDFが今すぐ届きます
+        LINEに登録するだけで<br>3つ全部、今すぐ受け取れます
       </div>
       <div class="cta-reassure">
-        <span>登録後すぐにPDFが届きます</span>
+        <span>登録後すぐに特典が届きます</span>
         <span>営業・勧誘は一切しません</span>
         <span>読むだけでOK。いつでもブロックできます</span>
       </div>
       <a href="https://lin.ee/qYCi0W9" class="cta-btn">
-        LINEに登録して無料PDFを受け取る
+        LINEに登録して3つの特典を受け取る
         <span>友だち追加は無料</span>
       </a>
     </div>
